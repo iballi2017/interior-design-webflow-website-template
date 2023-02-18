@@ -1,14 +1,17 @@
 :root {
     --clr-primary-400: hsl(31, 47%, 63%);
+    --clr-primary-500: hsl(31, 47%, 43%);
     --clr-neutral-100: hsl(30, 27%, 94%);
     --clr-accent-400: hsl(210, 4%, 31%);
+    --clr-accent-800: hsl(212, 14%, 5%);
     --clr-accent-900: hsl(212, 14%, 19%);
+    --clr-light-100: hsl(0, 0%, 100%);
 
     --ff-primary: "Jost", sans-serif;
     --ff-accent: "DM Serif Display", serif;
 
     --ff-body: var(--ff-primary);
-    --ff-accent: var(--ff-accent);
+    --ff-heading: var(--ff-accent);
 
     --fw-regular: 400;
     --fw-semi-bold: 500;
@@ -24,7 +27,9 @@
     --fs-850: 3.125rem; /*65px*/
     --fs-900: 5.313rem; /*85px*/
 
-    --size-500: 3.53rem; /* 57px */
+    --fs-hero-heading: var(--fs-500);
+
+    --size-900: 1.25rem; /* 20px */
     /* --size-200:  3.53rem; */
     /* --size-300:  3.53rem; */
     /* --size-400:  3.53rem; */
@@ -35,10 +40,13 @@
     :root {
         --fs-nav: var(--fs-400);
         --fs-body: var(--fs-450);
-        --fs-primary-heading: var(--fs-800);
         --fs-secondary-heading: var(--fs-500);
-        --fs-button: var(--fs-350);
+        --fs-primary-heading: var(--fs-800);
         --fs-hero-heading: var(--fs-850);
+        --fs-button: var(--fs-350);
+
+        --size-500: 3.53rem; /* 57px */
+        --size-900: 4.375rem; /* 70px */
     }
 }
 
@@ -78,6 +86,7 @@
 }
 .fs-hero-heading {
     font-size: var(--fs-hero-heading);
+    line-height: 1.2;
 }
 .fs-secondary-heading {
     font-size: var(--fs-secondary-heading);
@@ -114,20 +123,69 @@
 .padding-block-500 {
     padding-block: var(--size-500);
 }
+.margin-block-500 {
+    margin-block: var(--size-500);
+}
+
+.b-radius-900 {
+    border-radius: var(--size-900);
+}
+/* @media (min-width: 50em) {
+    .b-radius-900 {
+        border-radius: var(--size-900);
+    }
+} */
 
 /* Component classes */
+
+.button {
+    border: 0;
+    padding: 1em 1.85em;
+    font-weight: var(--fw-bold);
+    font-size: var(--fs-button);
+    border-radius: 1.125em;
+    line-height: 1;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.button:hover,
+.button:focus-visible {
+}
+
 .cta {
+    background-color: var(--clr-accent-900);
+    color: var(--clr-light-100);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
-/* .cta{
-    background-color: var(--clr-primary-400);
+.cta:hover,
+.cta:focus-visible {
+    background-color: var(--clr-accent-800);
+    box-shadow: 0 1.125em 1em -1em var(--clr-primary-400);
 }
+
 .cta::after {
-    content: url(../../assets/icons/icon-accent-arrow-left.svg);
+    content: url(../../assets/icons/icon-primary-arrow-left.svg);
+    margin-left: 0.7em;
+}
+
+.cta[data-type="inverted"] {
+    background-color: var(--clr-primary-400);
+    color: var(--clr-light-100);
+}
+
+
+.cta[data-type="inverted"]:hover,
+.cta[data-type="inverted"]:focus-visible{
+    background-color: var(--clr-primary-500);
+    color: var(--clr-light-100);
 }
 
 .cta[data-type="inverted"]::after {
-    content: url(../../assets/icons/icon-primary-arrow-left.svg);
-} */
+    content: url(../../assets/icons/icon-accent-arrow-left.svg);
+}
 
 .container {
     --max-width: 1200px;
@@ -146,7 +204,6 @@
     .even-columns {
         grid-auto-flow: column;
         grid-auto-columns: 1fr;
-        background-color: red;
     }
 }
 
@@ -155,4 +212,42 @@ body {
     font-size: var(--ff-body);
     font-family: var(--ff-primary);
     color: var(--clr-accent-400);
+}
+
+.hero {
+    min-height: 22.375rem;
+    /* background-image: url(../../assets/images/hero-bg.png); */
+    background-image: url(../../assets/images/hero-bg-2.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    overflow: hidden;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.hero h1 {
+    /* margin-top: 14.125rem; */
+    font-family: var(--ff-heading);
+    margin-bottom: 0.5em;
+}
+.hero p {
+    max-width: 27rem;
+    margin-bottom: 0.8em;
+}
+
+@media (min-width: 50em) {
+    .hero {
+        min-height: 47.375rem;
+        padding: 3.25rem;
+        background-position: center;
+        display: block;
+    }
+    .hero h1 {
+        margin-top: 14.125rem;
+    }
+    .hero p {
+        font-size: var(--fs-450);
+    }
 }
