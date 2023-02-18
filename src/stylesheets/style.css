@@ -1,5 +1,158 @@
 :root {
-    --color-accent-100: hsl(30, 27%, 94%);
-    --color-primary-400: hsl(31, 47%, 63%);
-    --color-neutral-900: hsl(212, 14%, 19%);
+    --clr-primary-400: hsl(31, 47%, 63%);
+    --clr-neutral-100: hsl(30, 27%, 94%);
+    --clr-accent-400: hsl(210, 4%, 31%);
+    --clr-accent-900: hsl(212, 14%, 19%);
+
+    --ff-primary: "Jost", sans-serif;
+    --ff-accent: "DM Serif Display", serif;
+
+    --ff-body: var(--ff-primary);
+    --ff-accent: var(--ff-accent);
+
+    --fw-regular: 400;
+    --fw-semi-bold: 500;
+    --fw-bold: 700;
+
+    --fs-300: 1rem; /*16px*/
+    --fs-350: 1.125rem; /*18px*/
+    --fs-400: 1.25rem; /*20px*/
+    --fs-450: 1.375rem; /*22px*/
+    --fs-500: 1.563rem; /*25px*/
+    --fs-600: 2.188rem; /*35px*/
+    --fs-800: 3.125rem; /*50px*/
+    --fs-850: 3.125rem; /*65px*/
+    --fs-900: 5.313rem; /*85px*/
+
+    --size-500: 3.53rem; /* 57px */
+    /* --size-200:  3.53rem; */
+    /* --size-300:  3.53rem; */
+    /* --size-400:  3.53rem; */
+    /* --size-500:  3.53rem; */
+}
+
+@media (min-width: 50em) {
+    :root {
+        --fs-nav: var(--fs-400);
+        --fs-body: var(--fs-450);
+        --fs-primary-heading: var(--fs-800);
+        --fs-secondary-heading: var(--fs-500);
+        --fs-button: var(--fs-350);
+        --fs-hero-heading: var(--fs-850);
+    }
+}
+
+/* Utility classes */
+.text-primary-400 {
+    color: var(--clr-primary-400);
+}
+.text-accent-900 {
+    color: var(--clr-accent-900);
+}
+.text-neutral-100 {
+    color: var(--clr-accent-100);
+}
+
+.bg-primary-400 {
+    background-color: var(--clr-primary-400);
+}
+.bg-accent-900 {
+    background-color: var(--clr-accent-900);
+}
+.bg-neutral-100 {
+    background-color: var(--clr-accent-100);
+}
+
+.fw-bold {
+    font-weight: var(--fw-bold);
+}
+.fw-semi-bold {
+    font-weight: var(--fw-semi-bold);
+}
+.fw-regular {
+    font-weight: var(--fw-regular);
+}
+
+.fs-primary-heading {
+    font-size: var(--fs-primary-heading);
+}
+.fs-hero-heading {
+    font-size: var(--fs-hero-heading);
+}
+.fs-secondary-heading {
+    font-size: var(--fs-secondary-heading);
+}
+
+.fs-300 {
+    font-size: var(--fs-300);
+}
+.fs-350 {
+    font-size: var(--fs-350);
+}
+.fs-400 {
+    font-size: var(--fs-400);
+}
+.fs-450 {
+    font-size: var(--fs-450);
+}
+.fs-500 {
+    font-size: var(--fs-500);
+}
+.fs-600 {
+    font-size: var(--fs-600);
+}
+.fs-800 {
+    font-size: var(--fs-800);
+}
+.fs-850 {
+    font-size: var(--fs-850);
+}
+.fs-900 {
+    font-size: var(--fs-900);
+}
+
+.padding-block-500 {
+    padding-block: var(--size-500);
+}
+
+/* Component classes */
+.cta {
+}
+/* .cta{
+    background-color: var(--clr-primary-400);
+}
+.cta::after {
+    content: url(../../assets/icons/icon-accent-arrow-left.svg);
+}
+
+.cta[data-type="inverted"]::after {
+    content: url(../../assets/icons/icon-primary-arrow-left.svg);
+} */
+
+.container {
+    --max-width: 1200px;
+    --padding: 1rem;
+
+    max-width: min(var(--max-width), 100% - (var(--padding) * 2));
+    margin-inline: auto;
+}
+
+.even-columns {
+    display: grid;
+    gap: 1rem;
+}
+
+@media (min-width: 50em) {
+    .even-columns {
+        grid-auto-flow: column;
+        grid-auto-columns: 1fr;
+        background-color: red;
+    }
+}
+
+/* General styling */
+body {
+    font-size: var(--ff-body);
+    font-family: var(--ff-primary);
+    color: var(--clr-accent-400);
 }

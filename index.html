@@ -5,15 +5,67 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite + TS</title>
-    <link rel="stylesheet" href="./src/stylesheets/andy-bll-css-reset.css">
-    <link rel="stylesheet" href="./src/stylesheets/style.css">
+    <!-- Css Reset -->
+    <link rel="stylesheet" href="./src/stylesheets/andy-bll-css-reset.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Font family -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Jost:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Custom style -->
+    <link rel="stylesheet" href="./src/stylesheets/style.css" />
   </head>
   <body>
     <!-- <div id="app"></div> -->
 
+    <header class="primary-header">
+      <div class="container">
+        <a href="#" aria-label="Brand logo">
+          <img src="./assets/images/Logo.svg" alt="brand logo" />
+        </a>
+        <nav class="primary-navigation">
+          <ul role="list" class="nav-list">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Pages</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Project</a></li>
+            <li><a href="#">Blog</a></li>
+          </ul>
+        </nav>
+        <button aria-label="Search">
+          <img src="./assets/icons/icon-search.svg" alt="search" />
+        </button>
+      </div>
+    </header>
 
+    <main>
+      <section>
+        <div class="container">
+          <div id="hero">
+            <h1 class="fs-hero-heading fw-bold">Let Your Home<br/> Be Unique</h1>
+            <p>There are many variations of the passages of
+              lorem Ipsum fromavailable, majority.</p>
+              <button class="cta">Get Started</button>
+          </div>
 
-    <h1>Hello world</h1>
+          <div class="padding-block-500">
+            <ul class="even-columns">
+              <li>
+                <h3 class="fw-regular fs-500">Project Plan</h3>
+              </li>
+              <li>
+                <h3 class="fw-regular fs-500">Interior Work</h3>
+              </li>
+              <li>
+                <h3 class="fw-regular fs-500">Realization</h3>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
