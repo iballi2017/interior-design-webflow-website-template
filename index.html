@@ -22,21 +22,46 @@
 
     <header class="primary-header">
       <div class="container">
-        <a href="#" aria-label="Brand logo">
-          <img src="./assets/images/Logo.svg" alt="brand logo" />
-        </a>
-        <nav class="primary-navigation">
-          <ul role="list" class="nav-list">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Pages</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Project</a></li>
-            <li><a href="#">Blog</a></li>
-          </ul>
-        </nav>
-        <button aria-label="Search">
-          <img src="./assets/icons/icon-search.svg" alt="search" />
-        </button>
+        <div class="navigation-wrapper">
+          <a href="#" aria-label="Brand logo" class="brand-logo">
+            <img src="./assets/images/Logo.svg" alt="brand logo" />
+          </a>
+          <div class="d-flex align-items-center">
+            <nav class="primary-navigation">
+              <ul role="list" class="nav-list" id="primary-navigation">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Pages</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Project</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Contact</a></li>
+              </ul>
+            </nav>
+            <!-- search icon -->
+            <button aria-label="Search">
+              <img src="./assets/icons/icon-search.svg" alt="search" />
+            </button>
+            <!-- mobile navigation toggle -->
+            <button
+              class="mobile-nav-toggle"
+              aria-controls="primary-navigation" aria-expanded="false"
+            >
+              <img
+                class="icon-hamburger"
+                src="./assets/icons/icon-hamburger.svg"
+                alt=""
+                aria-hidden="false"
+              />
+              <img
+                class="icon-close"
+                src="./assets/icons/icon-close.svg"
+                alt=""
+                aria-hidden="true"
+              />
+              <span class="visually-hidden">menu</span>
+            </button>
+          </div>
+        </div>
       </div>
     </header>
 
@@ -44,11 +69,16 @@
       <section>
         <div class="container">
           <div class="hero | b-radius-900">
-            <h1 class="fs-hero-heading fw-bold">Let Your Home<br/> Be Unique</h1>
-            <p>There are many variations of the passages of
-              lorem Ipsum fromavailable, majority.</p>
-              <button class="cta button">Get Started</button>
-              <!-- <hr>
+            <h1 class="fs-hero-heading fw-bold">
+              Let Your Home<br />
+              Be Unique
+            </h1>
+            <p>
+              There are many variations of the passages of lorem Ipsum
+              fromavailable, majority.
+            </p>
+            <button class="cta button">Get Started</button>
+            <!-- <hr>
               <button class="cta button" data-type="inverted">Get Started</button> -->
           </div>
 
@@ -68,6 +98,7 @@
         </div>
       </section>
     </main>
-    <script type="module" src="/src/main.ts"></script>
+    <!-- <script type="module" src="/src/main.ts"></script> -->
+    <script type="module" src="/src/scripts/app.ts"></script>
   </body>
 </html>
