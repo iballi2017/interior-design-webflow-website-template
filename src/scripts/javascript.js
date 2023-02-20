@@ -4,6 +4,7 @@ const primaryNavigation = document.querySelector(".primary-navigation");
 
 function toggle() {
   toggler?.addEventListener("click", () => {
+    console.log("clicked!!!")
     primaryNavigation?.hasAttribute("data-visible")
       ? toggler?.setAttribute("aria-expanded", true)
       : toggler?.setAttribute("aria-expanded", false);
